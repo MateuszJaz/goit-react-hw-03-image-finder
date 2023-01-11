@@ -1,0 +1,19 @@
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+}
+
+.galleryItem {
+  margin-bottom: 20px;
+  cursor: pointer;
+
+}
+
+.img {
+  object-fit: cover;
+}

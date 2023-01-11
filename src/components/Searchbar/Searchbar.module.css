@@ -1,0 +1,13 @@
+.searchbar {
+  background-color: hsl(202, 55%, 45%);
+  width: 100vw;
+  height: 40px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  height: 34px;
+  padding: 2px 0;
+  outline: none;
+}
