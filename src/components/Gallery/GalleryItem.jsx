@@ -7,7 +7,7 @@ const GalleryItem = ({ searchResults, onClick }) => {
     return (
       <li key={nanoid()} className={style.galleryItem} onClick={onClick}>
         <img
-          className={style.img}
+          className={style.galleryItemImage}
           src={webformatURL}
           alt="search result img"
           width="300"

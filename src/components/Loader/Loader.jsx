@@ -6,7 +6,7 @@ const Loader = () => (
     height="150"
     width="150"
     ariaLabel="blocks-loading"
-    wrapperStyle={{ display: 'block', margin: '-40px auto 0' }}
+    wrapperStyle={{ display: 'block', margin: '0 auto' }}
     colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
   />
 );
