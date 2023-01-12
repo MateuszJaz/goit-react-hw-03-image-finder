@@ -1,12 +1,16 @@
 import style from './gallery.module.css';
 import PropTypes from 'prop-types';
 
-const ImageGallery = ({ children }) => {
-  return <ul className={style.gallery}>{children}</ul>;
+const ImageGallery = ({ galleryItem: GalleryItem, searchResults, onClick }) => {
+  return (
+    <ul className={style.gallery}>
+      <GalleryItem searchResults={searchResults} onClick={onClick} />
+    </ul>
+  );
 };
 
 ImageGallery.propTypes = {
-  children: PropTypes.object.isRequired,
+  galleryItem: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;

@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import style from './gallery.module.css';
+import style from '../gallery.module.css';
 import PropTypes from 'prop-types';
 
 const GalleryItem = ({ searchResults, onClick }) => {

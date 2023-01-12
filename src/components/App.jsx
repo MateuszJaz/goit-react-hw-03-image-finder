@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './Gallery/ImageGallery';
-import GalleryItem from './Gallery/GalleryItem';
+import GalleryItem from './Gallery/ImageGalleryItem/GalleryItem';
 import fetchImagesWithQuery from 'services/api';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
@@ -33,13 +33,18 @@ export class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({
-      isLoading: true,
-      searchResults: [],
-      searchQuery: e.target.search.value.trim().toLowerCase(),
-      page: 1,
-    });
-    e.target.reset();
+    if (e.target.search.value === '') {
+      return alert('Type something...');
+    } else {
+      this.setState({
+        isLoading: true,
+        searchResults: [],
+        searchQuery: e.target.search.value.trim().toLowerCase(),
+        page: 1,
+      });
+
+      e.target.reset();
+    }
   };
 
   handleLoadMore = () =>
@@ -65,23 +70,23 @@ export class App extends Component {
   render() {
     const { searchResults, isLoading, totalHits, isModalOpen, largeImageURL } =
       this.state;
+
     return (
       <>
         <Searchbar onSubmit={this.handleSubmit} />
         {totalHits !== 0 ? (
           <>
-            <ImageGallery>
-              <GalleryItem
-                searchResults={searchResults}
-                onClick={this.openModal}
-              />
-            </ImageGallery>
+            <ImageGallery
+              searchResults={searchResults}
+              onClick={this.openModal}
+              galleryItem={GalleryItem}
+            />
             {isLoading && <Loader />}
           </>
         ) : (
           <p className="info">Oops... Nothing found :(</p>
         )}
-        {searchResults.length >= 12 && <Button onClick={this.handleLoadMore} />}
+        <Button onClick={this.handleLoadMore} state={this.state} />
         {isModalOpen && (
           <Modal closeModal={this.closeModal} largeImageURL={largeImageURL} />
         )}
