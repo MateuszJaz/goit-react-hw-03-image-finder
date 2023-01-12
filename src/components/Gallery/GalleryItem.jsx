@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import style from './gallery.module.css';
+import PropTypes from 'prop-types';
 
 const GalleryItem = ({ searchResults, onClick }) => {
   return searchResults.map(({ webformatURL, largeImageURL }) => {
@@ -16,6 +17,11 @@ const GalleryItem = ({ searchResults, onClick }) => {
       </li>
     );
   });
+};
+
+GalleryItem.propTypes = {
+  searchResults: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default GalleryItem;

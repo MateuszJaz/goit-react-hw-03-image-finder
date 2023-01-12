@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import style from './modal.module.css';
 
@@ -29,5 +30,10 @@ class Modal extends React.Component {
     );
   }
 }
+
+Modal.propTypes = {
+  closeModal: PropTypes.func,
+  largeImageURL: PropTypes.string.isRequired,
+};
 
 export default Modal;
