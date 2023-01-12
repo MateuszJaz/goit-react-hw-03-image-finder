@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './Gallery/ImageGallery';
-import GalleryItem from './Gallery/ImageGalleryItem/GalleryItem';
+import ImageGalleryItem from './Gallery/ImageGalleryItem/ImageGalleryItem';
 import fetchImagesWithQuery from 'services/api';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
@@ -79,7 +79,7 @@ export class App extends Component {
             <ImageGallery
               searchResults={searchResults}
               onClick={this.openModal}
-              galleryItem={GalleryItem}
+              galleryItem={ImageGalleryItem}
             />
             {isLoading && <Loader />}
           </>
