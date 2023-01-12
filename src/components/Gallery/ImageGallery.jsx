@@ -10,9 +10,9 @@ const ImageGallery = ({ galleryItem: GalleryItem, searchResults, onClick }) => {
 };
 
 ImageGallery.propTypes = {
-  galleryItem: PropTypes.func,
-  searchResults: PropTypes.array,
-  onClick: PropTypes.func,
+  galleryItem: PropTypes.func.isRequired,
+  searchResults: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;

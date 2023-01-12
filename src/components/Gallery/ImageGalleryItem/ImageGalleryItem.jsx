@@ -22,8 +22,8 @@ const GalleryItem = ({ searchResults, onClick }) => {
 GalleryItem.propTypes = {
   searchResults: PropTypes.arrayOf(
     PropTypes.shape({
-      webformatURL: PropTypes.string,
-      largeImageURL: PropTypes.string,
+      webformatURL: PropTypes.string.isRequired,
+      largeImageURL: PropTypes.string.isRequired,
     })
   ),
   onClick: PropTypes.func.isRequired,

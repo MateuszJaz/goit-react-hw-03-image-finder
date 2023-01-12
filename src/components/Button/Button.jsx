@@ -12,6 +12,7 @@ const Button = ({ onClick, state }) => {
   else if (totalHits && !isLoading)
     return <p className="info">End of results</p>;
 };
+
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   state: PropTypes.object.isRequired,
