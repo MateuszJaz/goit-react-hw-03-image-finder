@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import style from './/searchbar.module.css';
+import style from './Searchbar.module.css';
 
 const Searchbar = ({ onSubmit }) => (
   <header className={style.searchbar}>
