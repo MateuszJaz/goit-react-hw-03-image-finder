@@ -1,4 +1,4 @@
-import style from './gallery.module.css';
+import style from './imageGallery.module.css';
 import PropTypes from 'prop-types';
 
 const ImageGallery = ({ galleryItem: GalleryItem, searchResults, onClick }) => {

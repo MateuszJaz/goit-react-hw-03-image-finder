@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
-import ImageGallery from './Gallery/ImageGallery';
-import ImageGalleryItem from './Gallery/ImageGalleryItem/ImageGalleryItem';
+import ImageGallery from './ImageGallery/ImageGallery';
+import ImageGalleryItem from './ImageGallery/ImageGalleryItem/ImageGalleryItem';
 import fetchImagesWithQuery from 'services/api';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
@@ -86,7 +86,12 @@ export class App extends Component {
         ) : (
           <p className="info">Oops... Nothing found :(</p>
         )}
-        <Button onClick={this.handleLoadMore} state={this.state} />
+        {searchResults.length >= 12 && searchResults.length !== totalHits ? (
+          <Button onClick={this.handleLoadMore} />
+        ) : (
+          totalHits && !isLoading && <p className="info">End of results</p>
+        )}
+        ;
         {isModalOpen && (
           <Modal closeModal={this.closeModal} largeImageURL={largeImageURL} />
         )}

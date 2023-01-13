@@ -1,11 +1,10 @@
-import { nanoid } from 'nanoid';
-import style from '../gallery.module.css';
+import style from './imageGalleryItem.module.css';
 import PropTypes from 'prop-types';
 
 const GalleryItem = ({ searchResults, onClick }) => {
   return searchResults.map(({ webformatURL, largeImageURL }) => {
     return (
-      <li key={nanoid()} className={style.galleryItem} onClick={onClick}>
+      <li key={webformatURL} className={style.galleryItem} onClick={onClick}>
         <img
           className={style.galleryItemImage}
           src={webformatURL}
